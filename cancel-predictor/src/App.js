@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import { Topbar } from './components/topbar/Topbar';
 
 function App() {

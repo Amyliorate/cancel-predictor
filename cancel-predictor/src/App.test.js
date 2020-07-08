@@ -4,9 +4,9 @@ import App from './App';
 
 describe('Main App component', () => {
   it('renders header', () => {
-      const { getByText } = render(<App />);
+    const { getByText } = render(<App />);
 
-      expect(getByText('Will my bike ride be cancelled?')).toBeVisible();
+    expect(getByText('Will my bike ride be cancelled?')).toBeVisible();
   });
 
   it('renders some content', () => {

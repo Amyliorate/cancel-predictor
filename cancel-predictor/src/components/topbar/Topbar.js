@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
 import { spacingUnits, colours } from '../../theme';
 
 const _Topbar = styled.header`
@@ -11,12 +11,12 @@ const _Topbar = styled.header`
     padding: ${spacingUnits.small} ${spacingUnits.medium};
     margin: 0;
   }
-`
+`;
 
 export function Topbar() {
   return (
     <_Topbar>
-        <h1>Will my bike ride be cancelled?</h1>
+      <h1>Will my bike ride be cancelled?</h1>
     </_Topbar>
   );
 }
