@@ -9,9 +9,9 @@ describe('Main App component', () => {
     expect(getByText('Will my bike ride be cancelled?')).toBeVisible();
   });
 
-  it('renders some content', () => {
+  it('renders submit button', () => {
     const { getByText } = render(<App />);
 
-    expect(getByText('Content')).toBeVisible();
+    expect(getByText('Submit')).toBeVisible();
   });
 });

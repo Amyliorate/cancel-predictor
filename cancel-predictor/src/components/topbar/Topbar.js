@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { spacingUnits, colours } from '../../theme';
+import { spacingUnits, colours } from '../../const/theme';
 
 const _Topbar = styled.header`
   background-color: ${colours.indigo};
