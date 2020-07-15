@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, wait, fireEvent } from '@testing-library/react';
 import { when } from 'jest-when';
-import { WeatherDisplay } from './WeatherDisplay';
+import { WeatherContent } from './WeatherContent';
 import { api } from '../../const/api';
 import { sample } from './SampleResponse';
 
@@ -14,12 +14,12 @@ const successResponse = (body, status = 200) => ({
 
 const successResponsePromise = (body) => Promise.resolve(successResponse(body));
 
-describe('WeatherDisplay Component', () => {
+describe('WeatherContent Component', () => {
   const fetchMock = jest.spyOn(global, 'fetch');
   it('Displays weather for given time stamp', async () => {
     when(fetchMock).calledWith(api.weatherOneCall())
       .mockReturnValueOnce(successResponsePromise(sample));
-    const { getByText } = render(<WeatherDisplay />);
+    const { getByText } = render(<WeatherContent />);
 
     fireEvent.click(getByText('Submit'));
 

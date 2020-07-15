@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { WeatherForm } from './WeatherForm';
+import { WeatherInfo } from './WeatherInfo';
 
 export const CenteredContent = styled.div`
     display: flex;
@@ -9,7 +10,7 @@ export const CenteredContent = styled.div`
     padding-top: 120px;
     flex-direction: column;
 `;
-export function WeatherDisplay() {
+export function WeatherContent() {
   const [weatherData, setWeatherData] = useState(null);
 
   /*
@@ -20,9 +21,7 @@ export function WeatherDisplay() {
   return (
     <CenteredContent>
       <WeatherForm setWeatherData={setWeatherData} />
-      <div>
-        {JSON.stringify(weatherData)}
-      </div>
+      {weatherData && <WeatherInfo weatherData={weatherData} />}
     </CenteredContent>
   );
 }

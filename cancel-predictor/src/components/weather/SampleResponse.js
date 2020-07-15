@@ -47,7 +47,7 @@ export const sample = {
       },
     ],
     rain: {
-      '1h': 1.52,
+      '1h': 1.52, //rainfall in last hour in mm
     },
   },
   hourly: [
