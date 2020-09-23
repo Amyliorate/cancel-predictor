@@ -19,10 +19,10 @@ describe('WeatherContent Component', () => {
   it('Displays weather for given time stamp', async () => {
     when(fetchMock).calledWith(api.weatherOneCall())
       .mockReturnValueOnce(successResponsePromise(sample));
-    const { getByText } = render(<WeatherContent />);
+    const { getByLabelText, getByText } = render(<WeatherContent />);
 
     fireEvent.click(getByText('Submit'));
 
-    await wait(() => expect(getByText(/Rain/)).toBeVisible());
+    await wait(() => expect(getByLabelText(/Temperature/)).toBeVisible());
   });
 });

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { WeatherForm } from './WeatherForm';
+import { WeatherForm } from '../form/WeatherForm';
 import { WeatherInfo } from './WeatherInfo';
 
 export const CenteredContent = styled.div`

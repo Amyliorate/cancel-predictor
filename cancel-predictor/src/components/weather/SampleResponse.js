@@ -1,3 +1,11 @@
+export const extractedSampleData = {
+  temperature: 28.41,
+  cloudCover: 90,
+  visibility: 4500,
+  windDegrees: 70,
+  rainInLastHour: 1.52,
+};
+
 /*
 Sample API response from the OneCall Api
 Obtained by calling https://api.openweathermap.org/data/2.5/onecall?lat=52.4862&lon=-1.8904&appid=MY_API_KEY
@@ -16,7 +24,7 @@ export const sample = {
     dt: 1594224221, // Time of request in millis
     sunrise: 1594180521,
     sunset: 1594240176,
-    temp: 288.41,
+    temp: 28.41,
     feels_like: 288.25,
     pressure: 1015,
     humidity: 93,
@@ -47,13 +55,13 @@ export const sample = {
       },
     ],
     rain: {
-      '1h': 1.52, //rainfall in last hour in mm
+      '1h': 1.52, // rainfall in last hour in mm
     },
   },
   hourly: [
     {
       dt: 1594224000,
-      temp: 288.41,
+      temp: 28.41,
       feels_like: 288.39,
       pressure: 1015,
       humidity: 93,
@@ -1018,12 +1026,12 @@ export const sample = {
       sunrise: 1594180521,
       sunset: 1594240176,
       temp: {
-        day: 288.41,
+        day: 28.41,
         min: 288.37,
         max: 288.51,
         night: 288.46,
         eve: 288.51,
-        morn: 288.41,
+        morn: 28.41,
       },
       feels_like: {
         day: 288.82,

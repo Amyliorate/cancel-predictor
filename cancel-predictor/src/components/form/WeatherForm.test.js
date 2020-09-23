@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { WeatherContent } from './WeatherContent';
+import { WeatherContent } from '../weather/WeatherContent';
 
 describe('Weather Form component', () => {
   // const fetchMock = jest.spyOn(global, 'fetch');
