@@ -1,18 +1,13 @@
 import React from 'react';
 import {
-  faThermometerHalf, faWind, faCloud, faBinoculars, faCloudRain,
+  faThermometerHalf, faWind, faCloud, faBinoculars, faCloudRain, faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import { getWindDirection } from './wind-util.js';
 
 const milesPerHourMultiplier = 2.23694; // api response gives wind speed in m/s
 
-/*
-Consequently, a wind blowing from the north has a wind direction of 0° (360°);
-a wind blowing from the east has a wind direction of 90°; a wind blowing from the south has a wind direction of 180°;
-and a wind blowing from the west has a wind direction of 270°.
-In general, wind directions are measured in units from 0° to 360°,
-*/
 const getWeatherNow = (weatherData) => {
   const { current } = weatherData;
 
@@ -24,6 +19,7 @@ const getWeatherNow = (weatherData) => {
     visibility: current.visibility,
     windSpeed: (current.wind_speed * milesPerHourMultiplier).toFixed(1),
     windDegrees: current.wind_deg,
+    windDirection: getWindDirection(current.wind_deg),
   };
 };
 
@@ -66,10 +62,9 @@ export function WeatherInfo({ weatherData }) {
           </div>
         </div>
         <div className="weatherFeature">
-          <FontAwesomeIcon className="icon" icon={faWind} aria-label="Wind direction" aria-hidden="false" />
+          <FontAwesomeIcon className="icon" icon={faArrowUp} aria-label="Wind direction" aria-hidden="false" rotation={weatherNow.windDirection.rotation} />
           <div>
-            {weatherNow.windDegrees}
-            &#176;
+            {weatherNow.windDirection.abbr}
           </div>
         </div>
         <div className="weatherFeature">
